@@ -5,7 +5,7 @@ def upload_and_predict(video):
     if video is None:
         return "请上传一个视频文件。"
     # 将视频文件发送到 FastAPI 接口
-    files = {'file': (video.name, video)}
+    files = {'file': (video.name, video, 'video/mp4')}
     response = requests.post("http://127.0.0.1:8000/detect", files=files)
     if response.status_code == 200:
         result = response.json()
