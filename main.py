@@ -10,9 +10,9 @@ def upload_and_predict(video):
     # files = {'file': (video.name, video, 'video/mp4')}
     with open(video, 'rb') as f:
         files = {
-            'file': ('video.mp4', f, 'video/mp4')  # 'file' 为表单字段名，根据接口需求调整
+            'file': ('video.mp4', f, 'video/mp4')  # 'f' 为表单字段名，根据接口需求调整
         }
-        response = requests.post("http://127.0.0.1:8000/detect2", files=files)
+        response = requests.post("http://123.56.248.244:8000/detect", files=files)
 
     if response.status_code == 200:
         result = response.json()
